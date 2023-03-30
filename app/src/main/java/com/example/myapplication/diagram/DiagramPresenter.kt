@@ -1,4 +1,7 @@
 package com.example.myapplication.diagram
 
-class DiagramPresenter {
+import com.example.myapplication.base.BasePresenter
+
+class DiagramPresenter: BasePresenter<DiagramView> (){
+
 }

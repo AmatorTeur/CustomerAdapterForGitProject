@@ -10,6 +10,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 abstract class BaseActivity : OmegaActivity, BaseView {
+
+    constructor() : super()
+    constructor(@LayoutRes contentLayoutId: Int) : super(contentLayoutId)
+
+    abstract override val presenter: OmegaPresenter<out BaseView>
+
     val moshi = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())
         .build()
@@ -20,5 +26,4 @@ abstract class BaseActivity : OmegaActivity, BaseView {
         .build()
     var service = retrofit.create(GitHubService::class.java)
 
-    abstract override val presenter: OmegaPresenter<out BaseView>
 }

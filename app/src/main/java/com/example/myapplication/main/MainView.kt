@@ -1,4 +1,6 @@
 package com.example.myapplication.main
 
-interface MainView {
+import com.example.myapplication.base.BaseView
+
+interface MainView : BaseView {
 }

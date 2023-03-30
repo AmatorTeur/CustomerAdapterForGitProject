@@ -1,4 +1,6 @@
 package com.example.myapplication.diagram
 
-interface DiagramView {
+import com.example.myapplication.base.BaseView
+
+interface DiagramView :BaseView {
 }
