@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "org.jetbrains.kotlin.kapt"
 }
 
 android {
@@ -61,7 +62,7 @@ dependencies {
     implementation("com.squareup.moshi:moshi-kotlin:1.13.0")
 
     implementation 'com.github.Omega-R.OmegaMoxy:moxy:2.2.1'
-    annotationProcessor 'com.github.Omega-R.OmegaMoxy:moxy-compiler:2.2.1'
+    kapt 'com.github.Omega-R.OmegaMoxy:moxy-compiler:2.2.1'
 
     implementation 'com.github.Omega-R:OmegaBase:1.4.3'
 }
