@@ -33,8 +33,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextPersonName"
-        android:foreground="?selectableItemBackgroundBorderless"/>
+        app:layout_constraintStart_toEndOf="@+id/editTextPersonName"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
