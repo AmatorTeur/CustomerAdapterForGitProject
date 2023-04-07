@@ -7,24 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-open class CustomerAdapter (private val listrepo: List<Repo>, private val listItemClick: OnItemClickListener) : RecyclerView.Adapter<CustomerAdapter.ViewHolder>(){
+open class CustomAdapter (private val listrepo: List<Repo>, private val listItemClick: OnItemClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    inner class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
-        val nameRepoTextView = itemView.findViewById<TextView>(R.id.textlist)!!
-
-        init {
-            itemView.setOnClickListener(this@ViewHolder)
-        }
-        override fun onClick(v: View) {
-            val position = adapterPosition
-            listItemClick.onItemClick(v, position)
-        }
-    }
-
-    fun interface OnItemClickListener {
-        fun onItemClick(view: View, position: Int)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
@@ -38,7 +22,26 @@ open class CustomerAdapter (private val listrepo: List<Repo>, private val listIt
         holder.nameRepoTextView.text = itemViewModel.name
 //        holder.itemView.setOnClickListener {listItemClick}
     }
+
     override fun getItemCount(): Int {
         return listrepo.size
+    }
+
+    fun interface OnItemClickListener {
+        fun onItemClick(view: View, position: Int)
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+
+        val nameRepoTextView = itemView.findViewById<TextView>(R.id.textlist)!!
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View) {
+            val position = adapterPosition
+            listItemClick.onItemClick(v, position)
+        }
     }
 }
