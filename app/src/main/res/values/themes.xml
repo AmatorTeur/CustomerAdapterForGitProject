@@ -12,5 +12,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="imageButtonStyle">@style/ImageButton</item>
     </style>
+
+        <style name="Theme.MyApplication.Bars">
+            <item name="android:windowTranslucentStatus">true</item>
+            <item name="android:windowTranslucentNavigation">true</item>
+            <item name="android:windowBackground">#FFF3E9</item>
+            <item name="android:fitsSystemWindows">true</item>
+
+        </style>
+
 </resources>

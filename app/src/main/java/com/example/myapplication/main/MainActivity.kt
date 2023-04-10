@@ -1,7 +1,9 @@
 package com.example.myapplication.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +28,6 @@ class MainActivity : BaseActivity(R.layout.activity_main), MainView, CustomAdapt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView!!.layoutManager = LinearLayoutManager(this)

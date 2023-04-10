@@ -10,4 +10,18 @@
         <item name="textAllCaps">true</item>
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="ToolBarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleCentered">true</item>
+        <item name="navigationIcon">@drawable/back_button</item>
+        <item name="android:titleTextAppearance">@style/Main</item>
+        <item name="titleTextColor">@color/black</item>
+        <item name="android:paddingTop">25dp</item>
+    </style>
+
+    <style name="ImageButton">
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+        <item name="background">@color/back_diagram</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
 </resources>
