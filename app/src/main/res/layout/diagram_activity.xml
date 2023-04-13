@@ -7,7 +7,7 @@
     android:background="@color/back_diagram">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+        android:id="@+id/material_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -25,22 +25,57 @@
             android:src="@drawable/pain_backache" />
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <Button
-        android:id="@+id/btn_diagram"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Pusk"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="@string/btn_year"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="@string/btn_month"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="@string/btn_week"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
 
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart_grafik"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_diagram"
+        app:layout_constraintBottom_toTopOf="@id/btn_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
 
         <ImageButton
+            android:id="@+id/back_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_left"
@@ -64,11 +100,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/message_coming_soon"
+            android:layout_centerInParent="true"
             android:paddingHorizontal="10dp"
-            android:layout_centerInParent="true"/>
+            android:text="@string/message_coming_soon" />
 
         <ImageButton
+            android:id="@+id/next_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_right"

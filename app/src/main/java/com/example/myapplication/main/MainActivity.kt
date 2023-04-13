@@ -55,8 +55,3 @@ class MainActivity : BaseActivity(R.layout.activity_main), MainView, CustomAdapt
 
 
 }
-
-
-
-////https://guides.codepath.com/android/using-the-recyclerview
-////https://developer.alexanderklimov.ru/android/views/recyclerview-kot.php
