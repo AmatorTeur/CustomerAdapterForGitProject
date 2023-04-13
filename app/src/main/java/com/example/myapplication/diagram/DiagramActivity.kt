@@ -42,6 +42,7 @@ class DiagramActivity: BaseActivity (R.layout.diagram_activity), DiagramView,
     private val textDate: TextView by bind(R.id.textView)
     private val backDate: ImageButton by bind(R.id.back_date)
     private val nextDate: ImageButton by bind(R.id.next_date)
+//    private val date
     private val toolbar: MaterialToolbar by bind(R.id.material_tool_bar)
 
     private val barChart: BarChart by bind(R.id.bar_chart_grafik) {
@@ -82,7 +83,9 @@ class DiagramActivity: BaseActivity (R.layout.diagram_activity), DiagramView,
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        toolbar.setNavigationOnClickListener {
+            presenter.backMainActivity()
+        }
 
         textDate.text = "$dateDay $dateMonth $dateYear"
 

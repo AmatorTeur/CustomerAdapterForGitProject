@@ -5,7 +5,7 @@ import com.example.myapplication.main.MainActivity
 
 class DiagramPresenter: BasePresenter<DiagramView> (){
     fun backMainActivity(){
-        DiagramActivity.createLauncher().launch()
+        MainActivity.createLauncher().launch()
         exit()
     }
 

@@ -4,7 +4,7 @@
     android:id="@+id/diagram_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back_diagram">
+    android:background="@color/pesokfon">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/material_tool_bar"
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/material_tool_bar">
 
         <ImageButton
             android:id="@+id/back_date"
@@ -101,8 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:paddingHorizontal="10dp"
-            android:text="@string/message_coming_soon" />
+            android:paddingHorizontal="10dp" />
 
         <ImageButton
             android:id="@+id/next_date"

@@ -44,4 +44,5 @@ open class CustomAdapter (private val listrepo: List<Repo>, private val listItem
             listItemClick.onItemClick(v, position)
         }
     }
+
 }

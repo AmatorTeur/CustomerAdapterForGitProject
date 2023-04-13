@@ -1,14 +1,13 @@
 package com.example.myapplication.main
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.CustomAdapter
+import com.example.myapplication.PaginationScrollListener
 import com.example.myapplication.R
 import com.example.myapplication.Repo
 import com.example.myapplication.base.BaseActivity
@@ -24,13 +23,25 @@ class MainActivity : BaseActivity(R.layout.activity_main), MainView, CustomAdapt
         fun createLauncher() = createActivityLauncher()
     }
     override val presenter: MainPresenter by providePresenter()
-    //    var listRepo: List<Repo> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView!!.layoutManager = LinearLayoutManager(this)
+        private fun addScrollListener() {
+            recyclerView.addOnScrollListener(object :
+                PaginationScrollListener(recyclerView.layoutManager as LinearLayoutManager) {
+                override fun loadMoreItems() {
+                    viewModel.fetchEmails()
+                }
+
+                override fun isLastPage() = viewModel.isAllEmailLoaded
+
+                override fun isLoading() = isLoadingEmails
+            })
+        }
 
         val btnSearch = findViewById<Button>(R.id.btn_search)
         btnSearch!!.setOnClickListener {
