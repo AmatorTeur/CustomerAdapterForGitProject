@@ -38,19 +38,22 @@ class DiagramActivity: BaseActivity (R.layout.diagram_activity), DiagramView,
     private var dateMonth = Date().getDateMonth()
     private var dateDay = Date().getDateDayOfMonth()
 
-    val buttonDiagram: Button by bind(R.id.btn_layout)
     private val textDate: TextView by bind(R.id.textView)
     private val backDate: ImageButton by bind(R.id.back_date)
     private val nextDate: ImageButton by bind(R.id.next_date)
+
+    private val rangeYear: Button by bind(R.id.btn_year)
+    private val rangeMonth: Button by bind(R.id.btn_month)
+    private val rangeDay: Button by bind(R.id.btn_day)
 //    private val date
     private val toolbar: MaterialToolbar by bind(R.id.material_tool_bar)
 
     private val barChart: BarChart by bind(R.id.bar_chart_grafik) {
         setOnChartValueSelectedListener(this@DiagramActivity)
-        var barDataSet = BarDataSet(barEntriesList, "")
-        var barData = BarData(barDataSet)
+        val barDataSet = BarDataSet(barEntriesList, "")
+        val barData = BarData(barDataSet)
 
-        barChart!!.data = barData
+        barChart.data = barData
         barDataSet.valueTextColor = Color.BLACK
         barDataSet.color = resources.getColor(R.color.purple_200)
         barDataSet.valueTextSize = 16f
@@ -90,15 +93,28 @@ class DiagramActivity: BaseActivity (R.layout.diagram_activity), DiagramView,
         textDate.text = "$dateDay $dateMonth $dateYear"
 
         backDate.setOnClickListener {
-        dateYear -= 1
+            dateYear -= 1
+            dateMonth -= 1
             textDate.text = "$dateDay $dateMonth $dateYear"
         }
 
         nextDate.setOnClickListener {
             dateYear += 1
+            dateMonth += 1
             textDate.text = "$dateDay $dateMonth $dateYear"
         }
 
+        rangeYear.setOnClickListener {
+
+        }
+
+        rangeMonth.setOnClickListener {
+
+        }
+
+        rangeDay.setOnClickListener {
+
+        }
 
     }
 

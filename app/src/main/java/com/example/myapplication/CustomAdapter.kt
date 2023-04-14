@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-open class CustomAdapter (private val listrepo: List<Repo>, private val listItemClick: OnItemClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+open class CustomAdapter (private val listRepo: List<Repo>, private val listItemClick: OnItemClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,13 +18,13 @@ open class CustomAdapter (private val listrepo: List<Repo>, private val listItem
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val itemViewModel = listrepo[position]
+        val itemViewModel = listRepo[position]
         holder.nameRepoTextView.text = itemViewModel.name
 //        holder.itemView.setOnClickListener {listItemClick}
     }
 
     override fun getItemCount(): Int {
-        return listrepo.size
+        return listRepo.size
     }
 
     fun interface OnItemClickListener {
